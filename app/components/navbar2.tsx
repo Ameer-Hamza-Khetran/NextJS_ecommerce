@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import logo from '@/images/Logo.webp'
-import { Menu, } from "lucide-react";
+import { AlignRight, } from "lucide-react";
 
 function Logo1() {
     return(
@@ -18,7 +18,7 @@ function handleOpenMenu() {
 
 function HamburgerMenu() {
     return(
-        <Menu color="#000000" size={28} onClick={handleOpenMenu}/>
+        <AlignRight color="#000000" size={28} onClick={handleOpenMenu}/>
     );
 }
 
