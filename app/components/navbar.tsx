@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from "next/image";
 import logo from '@/images/Logo.webp'
 import { ShoppingCart, X, } from "lucide-react";
+import ProductCount from "../components/productCount";
 
 function Logo() {
     return(
@@ -31,7 +32,8 @@ function Nav() {
 function Cart() {
     return(
         <div className="mt-40 mx-auto w-14 h-14 bg-slate-100 rounded-full flex items-center justify-center">
-            <div>
+            <div className='flex flex-col items-end'>
+                <ProductCount/>
                 <ShoppingCart size={30}/>
             </div>
         </div>

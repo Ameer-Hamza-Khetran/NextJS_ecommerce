@@ -1,10 +1,10 @@
-import Link from 'next/link'
+'use client'
+
 import Image from "next/image";
 import logo from '@/images/Logo.webp'
-import { Input } from "@/components/ui/input"
-import { Menu } from "lucide-react";
+import { Menu, } from "lucide-react";
 
-function Logo() {
+function Logo1() {
     return(
         <div className='w-fit'>
             <Image alt='Logo' src={logo} width={160} height={160}></Image>
@@ -12,17 +12,21 @@ function Logo() {
     );
 }
 
-function MenuIcon() {
+function handleOpenMenu() {
+    return alert('Hello World')   
+}
+
+function HamburgerMenu() {
     return(
-        <Menu color="#000000" size={28}/>
+        <Menu color="#000000" size={28} onClick={handleOpenMenu}/>
     );
 }
 
-export default function Navbar() {
+export default function Navbar2() {
     return(
         <div className='max-w-screen-2xl w-5/6 mx-auto mt-8 flex justify-between'>
-            <Logo/>
-            <MenuIcon/>          
+            <Logo1/>
+            <HamburgerMenu/>          
         </div>
     );
 }
