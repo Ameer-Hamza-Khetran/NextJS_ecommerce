@@ -1,8 +1,10 @@
+'use client'
+
 import Link from 'next/link'
 import Image from "next/image";
 import logo from '@/images/Logo.webp'
 import { ShoppingCart, X, } from "lucide-react";
-import ProductCount from "../components/productCount";
+import ProductCount from "../productCount";
 
 function Logo() {
     return(

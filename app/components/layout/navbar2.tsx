@@ -3,6 +3,8 @@
 import Image from "next/image";
 import logo from '@/images/Logo.webp'
 import { AlignRight, } from "lucide-react";
+import { useState } from "react";
+import Navbar from "@/app/components/layout/navbar";
 
 function Logo1() {
     return(
@@ -12,21 +14,22 @@ function Logo1() {
     );
 }
 
-function handleOpenMenu() {
-    return alert('Hello World')   
-}
-
-function HamburgerMenu() {
+function HamburgerMenu({onClick}:any) {
     return(
-        <AlignRight color="#000000" size={28} onClick={handleOpenMenu}/>
+        <AlignRight color="#000000" size={28} onClick={onClick}/>
     );
 }
 
-export default function Navbar2() {
+export default function MenuOpen() {
+    const [nav, setNav] = useState(true);
+    const toggleNav = () => {
+        setNav(!nav);
+    };
     return(
         <div className='max-w-screen-2xl w-5/6 mx-auto mt-8 flex justify-between'>
             <Logo1/>
-            <HamburgerMenu/>          
+            {nav ? null : <Navbar/>}
+            <HamburgerMenu onClick={toggleNav}/>          
         </div>
     );
 }
