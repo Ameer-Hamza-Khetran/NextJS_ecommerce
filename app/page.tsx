@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import Hero from '../app/components/heroSection'
-import MenuOpen from './components/layout/navbar';
+import Menu from './components/layout/navbar';
 import Navbar from "@/app/components/layout/navbarOpen";
+import NavbarOpen from '@/app/components/layout/navbar';
 
 export default function Home() {
   return (
     <div>
-      <MenuOpen/>
+      <Menu/>
       <Hero/>
     </div>
   );
