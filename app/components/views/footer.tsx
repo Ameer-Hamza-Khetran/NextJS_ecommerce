@@ -10,7 +10,7 @@ interface FooterHeadingLinks {
 function FooterHeadings({title, links}:FooterHeading) {
     return(
         <div className="w-5/6 mx-auto">
-            <h3 className="text-xl text-gray-600 font-bold mb-5 mt-8">{title}</h3>
+            <h3 className="text-xl text-gray-500 font-bold mb-5 mt-8">{title}</h3>
             {links.map( (link:FooterHeadingLinks) => {
                 return(
                     <div key={link.id} className="mt-3 text-gray-600">{link.name}</div>
