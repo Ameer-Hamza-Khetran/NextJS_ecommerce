@@ -81,7 +81,7 @@ export default function Navbar() {
   
     return (  
         <div>
-        <div className='max-w-screen-2xl w-5/6 mx-auto mt-8 flex justify-between'>
+        <div className='max-w-screen-2xl w-5/6 mx-auto mt-8 flex justify-between sm:w-3/4 sm:mt-16 md:w-5/6'>
           {!isOpen && <Logo height={160} width={160} />}
           {!isOpen && <HamburgerMenu onClick={toggleNav} />}
           {isOpen && (

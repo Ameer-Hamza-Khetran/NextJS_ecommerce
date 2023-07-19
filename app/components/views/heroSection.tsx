@@ -8,7 +8,7 @@ import hero4 from '@/images/hero4.webp'
 
 function Sale() {
     return(
-        <div className="h-10 w-32 bg-blue-100 text-blue-700 font-semibold rounded-md flex justify-center items-center mt-16">
+        <div className="h-10 w-32 bg-blue-100 text-blue-700 font-semibold rounded-md flex justify-center items-center mt-16 sm:mt-20">
             Sale 70%
         </div>
     );
@@ -16,7 +16,7 @@ function Sale() {
 
 function HeadingMain() {
     return(
-        <div className="mt-10"> 
+        <div className="mt-10 sm:w-11/12 md:w-10/12"> 
             <h1 className="font-bold text-black text-5xl leading-tight">
                 An Industrial Take on Streetwear
             </h1>
@@ -26,7 +26,7 @@ function HeadingMain() {
 
 function Para() {
     return(
-        <div>
+        <div className="sm:w-9/12 md:w-7/12">
             <p className="text-gray-700 font-normal mt-8">
                 Anyone can beat you but no one can beat your outfit as long as you wear Dine outfits.
             </p>
@@ -37,7 +37,7 @@ function Para() {
 function CartShopping() {
     return(
         <div className="mt-8">
-            <Button className="h-16 w-60 bg-gray-950 bg-blend-lighten">
+            <Button className="bg-gray-950 bg-blend-lighten">
                 <ShoppingCart size={24}/>
                 <p className="font-semibold ml-2 text-lg">Start Shopping</p>
             </Button>
@@ -47,7 +47,7 @@ function CartShopping() {
 
 function HeroBrandImages() {
     return(
-        <div className="mt-10 grid grid-cols-2 gap-y-6">
+        <div className="mt-10 grid grid-cols-2 gap-y-6 sm:flex sm:justify-between">
             <Image alt="bazaar (Brand)" src={hero1} width={100} height={100}></Image>
             <Image alt="bazaar (Brand)" src={hero2} width={100} height={100}></Image>
             <Image alt="bazaar (Brand)" src={hero3} width={100} height={100}></Image>
@@ -58,7 +58,7 @@ function HeroBrandImages() {
 
 export default function Hero() {
     return(
-        <div className="w-5/6 mx-auto">
+        <div className="w-5/6 mx-auto sm:w-9/12 md:w-5/6">
             <Sale/>
             <HeadingMain/>
             <Para/>
