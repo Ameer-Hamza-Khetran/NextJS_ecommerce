@@ -1,12 +1,12 @@
 'use client'
 
+import { useState } from "react";
 import Image from "next/image";
-import Link from 'next/link'
 import logo from '@/images/Logo.webp'
 import { AlignRight, ShoppingCart, X,} from "lucide-react";
-import ProductCount from "../productCount";
-import { useState } from "react";
-// import NavbarOpen from "@/app/components/layout/navbarOpen";
+import ProductCount from "@/app/components/productCount";
+import Link from 'next/link'
+
 
 /*------- Navbar Mobile -> Hamburger Menu Closed Start--------*/
 
@@ -69,52 +69,35 @@ function Cart() {
     );
 }
 
-//--- Logo and Menu close icon combined to form a header component in the click event of hamburger menu icon ---
-function Header() {
-    const [menu, setMenu] = useState(false)
-    const toggleClose = () => {
-        setMenu(!menu)   
-    }
-
-    return(
-        menu ? <Menu/>
-        : 
-        <div className="flex justify-between">
-            <Logo1/>
-            <MenuClose onClick={toggleClose}/>
-        </div>
-     );
-}
-
-//--- Hamburger Menu complete function------
-export function NavbarOpen() {
-    return(
-        <div className='md:hidden w-4/5 h-screen mx-auto m-12'> 
-            <Header />
-            <Cart/> 
-            <Nav/>           
-        </div>
-    );
-}
-
 
 /**------ Navbar Mobile -> Hamburger menu Open End------ */
 
-/*----- Main Function ---------*/
-export default function Menu() {
-    const [nav, setNav] = useState(true);
+export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+  
     const toggleNav = () => {
-        setNav(!nav);
+      setIsOpen(!isOpen);
     };
-    return(
-        nav ?
-            <div className='max-w-screen-2xl w-5/6 mx-auto mt-8 flex justify-between'>
-                <Logo
-                    height={160}
-                    width={160}
-                />
-                <HamburgerMenu onClick={toggleNav}/>          
+  
+    return (  
+        <div>
+        <div className='max-w-screen-2xl w-5/6 mx-auto mt-8 flex justify-between'>
+          {!isOpen && <Logo height={160} width={160} />}
+          {!isOpen && <HamburgerMenu onClick={toggleNav} />}
+          {isOpen && (
+            <div className='flex justify-between w-full'>
+              <Logo1 />
+              <MenuClose onClick={toggleNav} />
             </div>
-        : <NavbarOpen/>
+          )}
+        </div>
+  
+        {isOpen && (
+          <div className='md:hidden relative w-4/5 max-h-screen h-screen mx-auto m-12'>
+            <Cart />
+            <Nav />
+          </div>
+        )}
+      </div>
     );
-}
+  }
