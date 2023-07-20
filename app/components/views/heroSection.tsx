@@ -17,7 +17,7 @@ function Sale() {
 function HeadingMain() {
     return(
         <div className="mt-10 sm:w-11/12 md:w-10/12"> 
-            <h1 className="font-bold text-black text-5xl leading-tight">
+            <h1 className="font-bold text-black text-5xl leading-tight tracking-wide">
                 An Industrial Take on Streetwear
             </h1>
         </div>
@@ -37,12 +37,16 @@ function Para() {
 function CartShopping() {
     return(
         <div className="mt-8">
-            <Button className="bg-gray-950 bg-blend-lighten">
+            <Button className="bg-gray-950 bg-blend-lighten sm:w-64 md:w-96">
                 <ShoppingCart size={24}/>
                 <p className="font-semibold ml-2 text-lg">Start Shopping</p>
             </Button>
         </div>
     );
+}
+
+function HeroMainImg() {
+    
 }
 
 function HeroBrandImages() {
