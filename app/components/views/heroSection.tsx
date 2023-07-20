@@ -5,6 +5,7 @@ import hero1 from '@/images/hero1.webp'
 import hero2 from '@/images/hero2.webp'
 import hero3 from '@/images/hero3.webp'
 import hero4 from '@/images/hero4.webp'
+import heroMain from '@/images/heroMain.webp'
 
 function Sale() {
     return(
@@ -46,7 +47,14 @@ function CartShopping() {
 }
 
 function HeroMainImg() {
-    
+    return(
+        <Image
+            src={heroMain}
+            alt="Main Hero Section image"
+            height={200}
+            width={550}            
+        />
+    );    
 }
 
 function HeroBrandImages() {
@@ -62,12 +70,17 @@ function HeroBrandImages() {
 
 export default function Hero() {
     return(
-        <div className="w-5/6 mx-auto sm:w-9/12 md:w-5/6">
-            <Sale/>
-            <HeadingMain/>
-            <Para/>
-            <CartShopping/>
-            <HeroBrandImages/>
+        <div className="lg:w-5/6 lg:flex lg:mx-auto">
+            <div className="w-5/6 mx-auto sm:w-9/12 md:w-5/6 lg:w-1/2">
+                <Sale/>
+                <HeadingMain/>
+                <Para/>
+                <CartShopping/>
+                <HeroBrandImages/>
+            </div>
+            <div className="hidden lg:block lg:w-1/2">
+                <HeroMainImg />
+            </div>
         </div>
     );
 }
