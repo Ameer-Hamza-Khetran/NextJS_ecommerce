@@ -7,13 +7,20 @@ import { AlignRight, ShoppingCart, X,} from "lucide-react";
 import ProductCount from "@/app/components/productCount";
 import Link from 'next/link'
 
-
-/*------- Navbar Mobile -> Hamburger Menu Closed Start--------*/
+/**------ Type Definations Start -------- */
 
 interface LogoSize {
-    height?: number | `${number}` | undefined
-    width?: number | `${number}` | undefined
+    height: number | `${number}`
+    width: number | `${number}`
 }
+
+interface ClickIconsLucideReact {
+    onClick: () => void
+}
+
+/**------ Type Definations End -------- */
+
+/*------- Navbar Mobile -> Hamburger Menu Closed Start--------*/
 
 function Logo({height, width}: LogoSize) {
     return(
@@ -23,7 +30,7 @@ function Logo({height, width}: LogoSize) {
     );
 }
 
-function HamburgerMenu({onClick}:any) {
+function HamburgerMenu({onClick}:ClickIconsLucideReact) {
     return(
         <AlignRight color="#000000" size={28} onClick={onClick}/>
     );
@@ -33,15 +40,7 @@ function HamburgerMenu({onClick}:any) {
 
 /**------ Navbar Mobile -> Hamburger menu Open Start------ */
 
-function Logo1() {
-    return(
-        <div className='w-fit'>
-            <Image alt='Logo' src={logo} width={180} height={180}></Image>
-        </div>
-    );
-}
-
-function MenuClose({ onClick }:any) {
+function MenuClose({ onClick }:ClickIconsLucideReact) {
     return(
         <X color="#000000" size={30} onClick={onClick}/>
     );
@@ -86,7 +85,7 @@ export default function Navbar() {
           {!isOpen && <HamburgerMenu onClick={toggleNav} />}
           {isOpen && (
             <div className='flex justify-between w-full'>
-              <Logo1 />
+              <Logo height={180} width={180} />
               <MenuClose onClick={toggleNav} />
             </div>
           )}
